@@ -7,6 +7,12 @@ namespace CarLotSimulator
 
         static void Main(string[] args)
         {
+            
+                        
+            
+            
+            
+            var carLot = new CarLot();
             //TODO
 
             //Create a seperate class file called Car
@@ -27,7 +33,8 @@ namespace CarLotSimulator
             myCar.isDrivable = "Yes";
             myCar.MakeEngineNoise(myCar.EngineNoise);
             myCar.MakeHonkNoise(myCar.HonkNoise);
-
+            
+            carLot.ParkingLot.Add(myCar);
 
 
             var my2ndCar = new Car()
@@ -39,9 +46,10 @@ namespace CarLotSimulator
                 HonkNoise = "HONK HONK",
                 isDrivable = "Ofcourse"
             };
-            myCar.MakeEngineNoise(myCar.EngineNoise);
-            myCar.MakeHonkNoise(myCar.HonkNoise);
-
+            my2ndCar.MakeEngineNoise(my2ndCar.EngineNoise);
+            my2ndCar.MakeHonkNoise(my2ndCar.HonkNoise);
+            
+            carLot.ParkingLot.Add(my2ndCar);   //ADDING 2ND CAR TO ParkingLot list
 
             var my3ndCar = new Car()
             {
@@ -53,8 +61,8 @@ namespace CarLotSimulator
                 isDrivable = "When it starts"
 
             };
-            myCar.MakeHonkNoise(myCar.HonkNoise);
-            myCar.MakeEngineNoise(myCar.EngineNoise);
+            my3ndCar.MakeHonkNoise(my3ndCar.HonkNoise);
+            my3ndCar.MakeEngineNoise(my3ndCar.EngineNoise);
 
             var my4thCar = new Car("2201", "Chevy", "SS", "VROOM VRoom", "HONK", "Maybe");
 
@@ -68,6 +76,23 @@ namespace CarLotSimulator
             //It should have at least one property: a List of cars
             //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
             //At the end iterate through the list printing each of car's Year, Make, and Model to the console
+
+            Console.WriteLine($"Number of cars created: {CarLot.numberOfCars}");
+            
+            
+            foreach(var vehicle in carLot.ParkingLot)
+            {
+                Console.WriteLine($"{vehicle.Year} {vehicle.Make} {vehicle.Model}");
+                Console.WriteLine(vehicle.EngineNoise);
+            }
+
+        
+        
+        
+        
+        
+        
         }
+
     }
 }

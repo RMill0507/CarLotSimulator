@@ -10,16 +10,24 @@ namespace CarLotSimulator
     {
         public Car()//Default Contructor
         {
-
+            CarLot.numberOfCars++;
+            //ClassName.StaticMember
         }
-        public Car(string year, string make, string model, string engineNoise, string honkNoise, string isdrivable)
+        //Custom Constructor
+        public Car(string year, string make, string model, string engineNoise, string honkNoise, string isdrivable)//PARAMETERS
         {
-
+            Year = year;
+            Make = make;
+            Model = model;
+            EngineNoise = engineNoise;
+            HonkNoise = honkNoise;
+            isDrivable = isdrivable;
+             
         }
         //Properties- Year, Make, Model, EngineNoise, HonkNoise, IsDriveable
         public string Make { get; set; }
         public string Model { get; set; }  
-        public string Year { get; set; }    
+        public string Year { get; set; }    //Get and Set Makes it a property
         public string EngineNoise { get; set; } 
         public string HonkNoise { get; set; }   
         public string isDrivable { get; set; }
